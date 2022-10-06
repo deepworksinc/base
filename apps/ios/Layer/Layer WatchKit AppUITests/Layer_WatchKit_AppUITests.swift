@@ -2,8 +2,6 @@
 //  Layer_WatchKit_AppUITests.swift
 //  Layer WatchKit AppUITests
 //
-//  Created by Shane on 10/2/22.
-//
 
 import XCTest
 

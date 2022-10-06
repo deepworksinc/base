@@ -2,15 +2,14 @@
 //  ContentView.swift
 //  Layer
 //
-//  Created by Shane on 10/2/22.
-//
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            HRMView()
+        }
     }
 }
 

@@ -2,8 +2,6 @@
 //  LayerTests.swift
 //  LayerTests
 //
-//  Created by Shane on 10/2/22.
-//
 
 import XCTest
 @testable import Layer

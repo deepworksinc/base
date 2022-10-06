@@ -2,8 +2,6 @@
 //  LayerUITestsLaunchTests.swift
 //  LayerUITests
 //
-//  Created by Shane on 10/2/22.
-//
 
 import XCTest
 
