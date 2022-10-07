@@ -24,12 +24,14 @@
 		345BDC1A28EA1705003992AB /* Layer_WatchKit_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345BDC1928EA1705003992AB /* Layer_WatchKit_AppTests.swift */; };
 		345BDC2428EA1705003992AB /* Layer_WatchKit_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345BDC2328EA1705003992AB /* Layer_WatchKit_AppUITests.swift */; };
 		345BDC2628EA1705003992AB /* Layer_WatchKit_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345BDC2528EA1705003992AB /* Layer_WatchKit_AppUITestsLaunchTests.swift */; };
-		345BDC4328EA6B69003992AB /* HRMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345BDC4228EA6B69003992AB /* HRMService.swift */; };
+		345BDC4328EA6B69003992AB /* HeartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345BDC4228EA6B69003992AB /* HeartService.swift */; };
 		345BDC4828EF16A8003992AB /* ConnectivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345BDC4728EF16A8003992AB /* ConnectivityService.swift */; };
 		345BDC4928EF16A8003992AB /* ConnectivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345BDC4728EF16A8003992AB /* ConnectivityService.swift */; };
-		345BDC4A28EF1748003992AB /* HRMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345BDC4228EA6B69003992AB /* HRMService.swift */; };
-		345BDC4E28EF1AB0003992AB /* HRMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345BDC4D28EF1AB0003992AB /* HRMView.swift */; };
-		345BDC4F28EF1AB0003992AB /* HRMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345BDC4D28EF1AB0003992AB /* HRMView.swift */; };
+		345BDC4A28EF1748003992AB /* HeartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345BDC4228EA6B69003992AB /* HeartService.swift */; };
+		345BDC4E28EF1AB0003992AB /* HeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345BDC4D28EF1AB0003992AB /* HeartView.swift */; };
+		345BDC4F28EF1AB0003992AB /* HeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345BDC4D28EF1AB0003992AB /* HeartView.swift */; };
+		345BDC5328F07971003992AB /* HeartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345BDC5228F07971003992AB /* HeartModel.swift */; };
+		345BDC5428F07971003992AB /* HeartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345BDC5228F07971003992AB /* HeartModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,10 +128,11 @@
 		345BDC1F28EA1705003992AB /* Layer WatchKit AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Layer WatchKit AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		345BDC2328EA1705003992AB /* Layer_WatchKit_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layer_WatchKit_AppUITests.swift; sourceTree = "<group>"; };
 		345BDC2528EA1705003992AB /* Layer_WatchKit_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layer_WatchKit_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		345BDC4228EA6B69003992AB /* HRMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRMService.swift; sourceTree = "<group>"; };
+		345BDC4228EA6B69003992AB /* HeartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartService.swift; sourceTree = "<group>"; };
 		345BDC4728EF16A8003992AB /* ConnectivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityService.swift; sourceTree = "<group>"; };
-		345BDC4D28EF1AB0003992AB /* HRMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRMView.swift; sourceTree = "<group>"; };
+		345BDC4D28EF1AB0003992AB /* HeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartView.swift; sourceTree = "<group>"; };
 		345BDC5028F067E9003992AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		345BDC5228F07971003992AB /* HeartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +295,7 @@
 		345BDC4628EF1679003992AB /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				345BDC5128F07948003992AB /* Models */,
 				345BDC4C28EF1A85003992AB /* Views */,
 				345BDC4B28EF1A0D003992AB /* Services */,
 			);
@@ -301,7 +305,7 @@
 		345BDC4B28EF1A0D003992AB /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				345BDC4228EA6B69003992AB /* HRMService.swift */,
+				345BDC4228EA6B69003992AB /* HeartService.swift */,
 				345BDC4728EF16A8003992AB /* ConnectivityService.swift */,
 			);
 			path = Services;
@@ -310,9 +314,17 @@
 		345BDC4C28EF1A85003992AB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				345BDC4D28EF1AB0003992AB /* HRMView.swift */,
+				345BDC4D28EF1AB0003992AB /* HeartView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		345BDC5128F07948003992AB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				345BDC5228F07971003992AB /* HeartModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -569,8 +581,9 @@
 				345BDBD228EA1702003992AB /* ContentView.swift in Sources */,
 				345BDC4828EF16A8003992AB /* ConnectivityService.swift in Sources */,
 				345BDBD028EA1702003992AB /* LayerApp.swift in Sources */,
-				345BDC4A28EF1748003992AB /* HRMService.swift in Sources */,
-				345BDC4E28EF1AB0003992AB /* HRMView.swift in Sources */,
+				345BDC4A28EF1748003992AB /* HeartService.swift in Sources */,
+				345BDC4E28EF1AB0003992AB /* HeartView.swift in Sources */,
+				345BDC5328F07971003992AB /* HeartModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,9 +610,10 @@
 			files = (
 				345BDC0328EA1705003992AB /* ContentView.swift in Sources */,
 				345BDC4928EF16A8003992AB /* ConnectivityService.swift in Sources */,
-				345BDC4328EA6B69003992AB /* HRMService.swift in Sources */,
+				345BDC4328EA6B69003992AB /* HeartService.swift in Sources */,
 				345BDC0128EA1705003992AB /* LayerApp.swift in Sources */,
-				345BDC4F28EF1AB0003992AB /* HRMView.swift in Sources */,
+				345BDC4F28EF1AB0003992AB /* HeartView.swift in Sources */,
+				345BDC5428F07971003992AB /* HeartModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

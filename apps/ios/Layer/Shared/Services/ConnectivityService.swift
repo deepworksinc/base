@@ -3,17 +3,11 @@
 //  Shared
 //
 
-import Foundation
 import WatchConnectivity
-
-struct BPMMessage: Identifiable {
-    let id = UUID()
-    let value: Int
-}
 
 final class ConnectivityService: NSObject, ObservableObject {
     static let shared = ConnectivityService()
-    @Published var bpmMessage: BPMMessage? = nil
+    @Published var heartStateMessage: HeartStateMessage? = nil
     
     private override init() {
         super.init()
@@ -26,21 +20,21 @@ final class ConnectivityService: NSObject, ObservableObject {
     
     private let kMessageKey = "message"
     
-    func updateBPM(_ bpm: Int) {
+    func updateHeartState(_ heartState: HeartState) {
         guard WCSession.default.activationState == .activated else {
-          return
+            return
         }
-        #if os(iOS)
+#if os(iOS)
         guard WCSession.default.isWatchAppInstalled else {
             return
         }
-        #else
+#else
         guard WCSession.default.isCompanionAppInstalled else {
             return
         }
-        #endif
+#endif
         
-        WCSession.default.sendMessage([kMessageKey : bpm], replyHandler: nil) { error in
+        WCSession.default.sendMessage([kMessageKey : heartState], replyHandler: nil) { error in
             print("Cannot send message: \(String(describing: error))")
         }
     }
@@ -48,9 +42,9 @@ final class ConnectivityService: NSObject, ObservableObject {
 
 extension ConnectivityService: WCSessionDelegate {
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        if let bpmValue = message[kMessageKey] as? Int {
+        if let heartStateValue = message[kMessageKey] as? HeartState {
             DispatchQueue.main.async { [weak self] in
-                self?.bpmMessage = BPMMessage(value: bpmValue)
+                self?.heartStateMessage = HeartStateMessage(value: heartStateValue)
             }
         }
     }
@@ -59,10 +53,10 @@ extension ConnectivityService: WCSessionDelegate {
                  activationDidCompleteWith activationState: WCSessionActivationState,
                  error: Error?) {}
     
-    #if os(iOS)
+#if os(iOS)
     func sessionDidBecomeInactive(_ session: WCSession) {}
     func sessionDidDeactivate(_ session: WCSession) {
         session.activate()
     }
-    #endif
+#endif
 }
