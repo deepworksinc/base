@@ -129,6 +129,7 @@
 		345BDC4228EA6B69003992AB /* HRMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRMService.swift; sourceTree = "<group>"; };
 		345BDC4728EF16A8003992AB /* ConnectivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityService.swift; sourceTree = "<group>"; };
 		345BDC4D28EF1AB0003992AB /* HRMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRMView.swift; sourceTree = "<group>"; };
+		345BDC5028F067E9003992AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +210,7 @@
 		345BDBCE28EA1702003992AB /* Layer */ = {
 			isa = PBXGroup;
 			children = (
+				345BDC5028F067E9003992AB /* Info.plist */,
 				345BDBCF28EA1702003992AB /* LayerApp.swift */,
 				345BDBD128EA1702003992AB /* ContentView.swift */,
 				345BDBD328EA1704003992AB /* Assets.xcassets */,
@@ -775,7 +777,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Layer WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Layer WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = Layer_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "This app uses bluetooth to find, connect and transfer data from heart rate monitoring devices.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -807,7 +810,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Layer WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Layer WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = Layer_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "This app uses bluetooth to find, connect and transfer data from heart rate monitoring devices.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -892,6 +896,8 @@
 				DEVELOPMENT_TEAM = 77BNMKA2CZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Layer/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "This app uses bluetooth to find, connect and transfer data from heart rate monitoring devices.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -923,6 +929,8 @@
 				DEVELOPMENT_TEAM = 77BNMKA2CZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Layer/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "This app uses bluetooth to find, connect and transfer data from heart rate monitoring devices.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

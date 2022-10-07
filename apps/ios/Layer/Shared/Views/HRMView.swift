@@ -10,10 +10,7 @@ struct HRMView: View {
     
     var body: some View {
         VStack {
-            Text("\(hrmService.counter)")
-            Button("Increment") {
-                hrmService.increment()
-            }
+            Text("\(hrmService.bpm)")
         }
     }
 }

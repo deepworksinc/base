@@ -6,14 +6,14 @@
 import Foundation
 import WatchConnectivity
 
-struct CounterMessage: Identifiable {
+struct BPMMessage: Identifiable {
     let id = UUID()
     let value: Int
 }
 
 final class ConnectivityService: NSObject, ObservableObject {
     static let shared = ConnectivityService()
-    @Published var counterMessage: CounterMessage? = nil
+    @Published var bpmMessage: BPMMessage? = nil
     
     private override init() {
         super.init()
@@ -26,7 +26,7 @@ final class ConnectivityService: NSObject, ObservableObject {
     
     private let kMessageKey = "message"
     
-    func updateCounter(_ counter: Int) {
+    func updateBPM(_ bpm: Int) {
         guard WCSession.default.activationState == .activated else {
           return
         }
@@ -40,7 +40,7 @@ final class ConnectivityService: NSObject, ObservableObject {
         }
         #endif
         
-        WCSession.default.sendMessage([kMessageKey : counter], replyHandler: nil) { error in
+        WCSession.default.sendMessage([kMessageKey : bpm], replyHandler: nil) { error in
             print("Cannot send message: \(String(describing: error))")
         }
     }
@@ -48,9 +48,9 @@ final class ConnectivityService: NSObject, ObservableObject {
 
 extension ConnectivityService: WCSessionDelegate {
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        if let counterValue = message[kMessageKey] as? Int {
+        if let bpmValue = message[kMessageKey] as? Int {
             DispatchQueue.main.async { [weak self] in
-                self?.counterMessage = CounterMessage(value: counterValue)
+                self?.bpmMessage = BPMMessage(value: bpmValue)
             }
         }
     }
