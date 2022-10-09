@@ -35,10 +35,10 @@
 		34473C0628F340FB00614834 /* HeartProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34473C0428F340FB00614834 /* HeartProvider.swift */; };
 		34473C0828F3414C00614834 /* ConnectivityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34473C0728F3414C00614834 /* ConnectivityProvider.swift */; };
 		34473C0928F3414C00614834 /* ConnectivityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34473C0728F3414C00614834 /* ConnectivityProvider.swift */; };
-		34473C1728F349CA00614834 /* DetrendedFluctuation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34473C1528F349CA00614834 /* DetrendedFluctuation.cpp */; };
-		34473C1828F349CA00614834 /* DetrendedFluctuation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34473C1528F349CA00614834 /* DetrendedFluctuation.cpp */; };
 		34473C1B28F34A2A00614834 /* DetrendedFluctuationWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34473C1A28F34A2A00614834 /* DetrendedFluctuationWrapper.mm */; };
 		34473C1C28F34A2A00614834 /* DetrendedFluctuationWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34473C1A28F34A2A00614834 /* DetrendedFluctuationWrapper.mm */; };
+		34473C2A28F3817800614834 /* DetrendedFluctuation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34473C2928F3817800614834 /* DetrendedFluctuation.cpp */; };
+		34473C2B28F3817800614834 /* DetrendedFluctuation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34473C2928F3817800614834 /* DetrendedFluctuation.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,10 +147,10 @@
 		34473C0D28F344EA00614834 /* Artifact-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Artifact-Bridging-Header.h"; sourceTree = "<group>"; };
 		34473C1328F349CA00614834 /* Artifact-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Artifact-Bridging-Header.h"; sourceTree = "<group>"; };
 		34473C1428F349CA00614834 /* Artifact WatchKit Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Artifact WatchKit Extension-Bridging-Header.h"; sourceTree = "<group>"; };
-		34473C1528F349CA00614834 /* DetrendedFluctuation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DetrendedFluctuation.cpp; sourceTree = "<group>"; };
-		34473C1628F349CA00614834 /* DetrendedFluctuation.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DetrendedFluctuation.hpp; sourceTree = "<group>"; };
 		34473C1928F34A0B00614834 /* DetrendedFluctuationWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetrendedFluctuationWrapper.h; sourceTree = "<group>"; };
 		34473C1A28F34A2A00614834 /* DetrendedFluctuationWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DetrendedFluctuationWrapper.mm; sourceTree = "<group>"; };
+		34473C2828F3817800614834 /* DetrendedFluctuation.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DetrendedFluctuation.hpp; sourceTree = "<group>"; };
+		34473C2928F3817800614834 /* DetrendedFluctuation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DetrendedFluctuation.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,10 +203,6 @@
 			isa = PBXGroup;
 			children = (
 				34473C0D28F344EA00614834 /* Artifact-Bridging-Header.h */,
-				34473C1528F349CA00614834 /* DetrendedFluctuation.cpp */,
-				34473C1628F349CA00614834 /* DetrendedFluctuation.hpp */,
-				34473C1928F34A0B00614834 /* DetrendedFluctuationWrapper.h */,
-				34473C1A28F34A2A00614834 /* DetrendedFluctuationWrapper.mm */,
 				34473C0C28F344B900614834 /* Artifact WatchKit Extension-Bridging-Header.h */,
 				34473BFA28F3401600614834 /* Shared */,
 				34473B8828F33EE600614834 /* Artifact */,
@@ -324,6 +320,8 @@
 		34473BFA28F3401600614834 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				34473C2C28F3827100614834 /* External */,
+				34473C2728F380E500614834 /* Wrappers */,
 				34473BFD28F3404400614834 /* Models */,
 				34473BFC28F3403E00614834 /* Views */,
 				34473BFB28F3402F00614834 /* Providers */,
@@ -354,6 +352,24 @@
 				34473BFE28F3407400614834 /* HeartModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		34473C2728F380E500614834 /* Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				34473C1928F34A0B00614834 /* DetrendedFluctuationWrapper.h */,
+				34473C1A28F34A2A00614834 /* DetrendedFluctuationWrapper.mm */,
+			);
+			path = Wrappers;
+			sourceTree = "<group>";
+		};
+		34473C2C28F3827100614834 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				34473C2928F3817800614834 /* DetrendedFluctuation.cpp */,
+				34473C2828F3817800614834 /* DetrendedFluctuation.hpp */,
+			);
+			path = External;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -609,13 +625,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34473C1728F349CA00614834 /* DetrendedFluctuation.cpp in Sources */,
 				34473B8C28F33EE600614834 /* ContentView.swift in Sources */,
 				34473C0228F3409F00614834 /* HeartView.swift in Sources */,
 				34473C1B28F34A2A00614834 /* DetrendedFluctuationWrapper.mm in Sources */,
 				34473BFF28F3407400614834 /* HeartModel.swift in Sources */,
 				34473B8A28F33EE600614834 /* ArtifactApp.swift in Sources */,
 				34473C0528F340FB00614834 /* HeartProvider.swift in Sources */,
+				34473C2A28F3817800614834 /* DetrendedFluctuation.cpp in Sources */,
 				34473C0828F3414C00614834 /* ConnectivityProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -646,12 +662,12 @@
 				34473C0928F3414C00614834 /* ConnectivityProvider.swift in Sources */,
 				34473C0628F340FB00614834 /* HeartProvider.swift in Sources */,
 				34473C0328F3409F00614834 /* HeartView.swift in Sources */,
-				34473C1828F349CA00614834 /* DetrendedFluctuation.cpp in Sources */,
 				34473BC328F33EE700614834 /* ComplicationController.swift in Sources */,
 				34473BBB28F33EE700614834 /* ArtifactApp.swift in Sources */,
 				34473C0028F3407400614834 /* HeartModel.swift in Sources */,
 				34473C1C28F34A2A00614834 /* DetrendedFluctuationWrapper.mm in Sources */,
 				34473BC128F33EE700614834 /* NotificationView.swift in Sources */,
+				34473C2B28F3817800614834 /* DetrendedFluctuation.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
