@@ -11,7 +11,7 @@ let heartMeasurementCharacteristicCBUUID = CBUUID(string: "2A37")
 
 class HeartProvider: NSObject, ObservableObject {
     @ObservedObject private var connectivityManager = ConnectivityProvider.shared
-    @Published var state = HeartState(bpm: 0, rr: 0, df: 0.0)
+    @Published var state = HeartState(bpm: 0, rr: [0], df: 0.0)
     
     var cancellableBag = Set<AnyCancellable>()
     var centralManager: CBCentralManager!
@@ -113,7 +113,7 @@ extension HeartProvider: CBPeripheralDelegate {
     }
     
     private func parseHeartState(from characteristic: CBCharacteristic) -> HeartState {
-        guard let characteristicData = characteristic.value else { return HeartState(bpm: -1, rr: -1, df: -1.0) }
+        guard let characteristicData = characteristic.value else { return HeartState(bpm: -1, rr: [-1], df: -1.0) }
         let byteArray = [UInt8](characteristicData)
         
         // See: https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.characteristic.heart_rate_measurement.xml
@@ -128,27 +128,27 @@ extension HeartProvider: CBPeripheralDelegate {
             // Heart Rate Value Format is in the 2nd and 3rd bytes
             bpm = (Int(byteArray[1]) << 8) + Int(byteArray[2])
         }
-        var rr = 0
+        var rr: [Int] = []
         let fifthBitValue = byteArray[0] & 16
         if fifthBitValue != 0 {
-            switch byteArray[0] {
-            case 16,18,20,22:
+            if [16,18,20,22].contains(byteArray[0]) {
                 //rr-value in [2] und [3]
-                rr = Int(byteArray[2]) + (Int(byteArray[3]) << 8)
-            case 17,19,21,23:
+                rr.append(Int(byteArray[2]) + (Int(byteArray[3]) << 8))
+            }
+            if [17,19,21,23].contains(byteArray[0]) {
                 //rr-value in [3] und [4]
-                rr = Int(byteArray[3]) + (Int(byteArray[4]) << 8)
-            case 24,26,28,30:
+                rr.append(Int(byteArray[3]) + (Int(byteArray[4]) << 8))
+            }
+            if [24,26,28,30].contains(byteArray[0]) {
                 //rr-value in [4] und [5]
-                rr = Int(byteArray[4]) + (Int(byteArray[5]) << 8)
-            case 25,27,29,31:
+                rr.append(Int(byteArray[4]) + (Int(byteArray[5]) << 8))
+            }
+            if [25,27,29,31].contains(byteArray[0]) {
                 //rr-value in [5] und [6]
-                rr = Int(byteArray[4]) + (Int(byteArray[5]) << 8)
-            default:
-                print("RR intervals not found despite flag")
+                rr.append(Int(byteArray[4]) + (Int(byteArray[5]) << 8))
             }
         }
-        let df = DetrendedFluctuationWrapper().computeDF(Int32(rr))
+        let df = DetrendedFluctuationWrapper().computeDF(rr)
         return HeartState(bpm: bpm, rr: rr, df: df as! Float)
     }
 }

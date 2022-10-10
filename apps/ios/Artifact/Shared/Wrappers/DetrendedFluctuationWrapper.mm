@@ -2,22 +2,22 @@
 //  DetrendedFluctuationWrapper.m
 //
 
-#import <Foundation/Foundation.h>
-#import "DetrendedFluctuationWrapper.h"
-#import "DetrendedFluctuation.hpp"
+#include <Foundation/Foundation.h>
+#include "DetrendedFluctuationWrapper.h"
+#include "DetrendedFluctuation.hpp"
+#include <vector>
+
+using std::vector;
 
 @implementation DetrendedFluctuationWrapper
-- (NSString *) sayHello {
+- (NSNumber *) computeDF: (NSArray *) rr {
     DetrendedFluctuation detrendedFluctuation;
-    std::string helloWorldMessage = detrendedFluctuation.sayHello();
-    return [NSString
-            stringWithCString:helloWorldMessage.c_str()
-            encoding:NSUTF8StringEncoding];
-}
-
-- (NSNumber *) computeDF: (int) rr {
-    DetrendedFluctuation detrendedFluctuation;
-    float df = detrendedFluctuation.computeDF(rr);
+    vector<int> rrArray;
+    for (int j = 0; j < [rr count]; ++j) {
+        int val = [rr[j] intValue];
+        rrArray.push_back(val);
+    }
+    float df = detrendedFluctuation.computeDF(rrArray);
     return @(df);
 }
 @end

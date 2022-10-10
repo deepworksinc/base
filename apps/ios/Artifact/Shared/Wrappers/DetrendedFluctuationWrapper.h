@@ -8,8 +8,7 @@
 #import <Foundation/Foundation.h>
 
 @interface DetrendedFluctuationWrapper : NSObject
-- (NSString *) sayHello;
-- (NSNumber *) computeDF: (int) rr;
+- (NSNumber *) computeDF: (NSArray *) rr;
 @end
 
 

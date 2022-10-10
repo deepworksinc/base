@@ -9,11 +9,13 @@
 
 #include <stdio.h>
 #include <string>
+#include <vector>
+
+using std::vector;
 
 class DetrendedFluctuation {
 public:
-    std::string sayHello();
-    float computeDF(int rr);
+    float computeDF(vector<int>& rr);
 };
 
 #endif /* DetrendedFluctuation_hpp */

@@ -6,7 +6,7 @@ import Foundation
 
 struct HeartState: Codable {
     let bpm: Int
-    let rr: Int
+    let rr: [Int]
     let df: Float
 }
 

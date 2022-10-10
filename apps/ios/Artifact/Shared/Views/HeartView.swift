@@ -10,7 +10,9 @@ struct HeartView: View {
     var body: some View {
         VStack {
             Text("\(heartProvider.state.bpm)")
-            Text("\(heartProvider.state.rr)")
+            ForEach(heartProvider.state.rr, id: \.self) {rr in
+                    Text("\(rr)")
+            }
             Text("\(heartProvider.state.df)")
         }
     }
