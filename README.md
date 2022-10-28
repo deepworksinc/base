@@ -2,4 +2,4 @@
 
 # Base
 
-Measurable zone 2 training
+Measured zone 2 training
