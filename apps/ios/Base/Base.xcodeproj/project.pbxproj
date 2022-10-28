@@ -839,7 +839,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Base WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Base WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = Base_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Base uses Bluetooth to find, connect and transfer data with your heart monitoring devices.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -872,7 +873,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Base WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Base WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = Base_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Base uses Bluetooth to find, connect and transfer data with your heart monitoring devices.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -958,6 +960,7 @@
 				DEVELOPMENT_TEAM = 77BNMKA2CZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Base uses Bluetooth to find, connect and transfer data with your heart monitoring devices.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -991,6 +994,7 @@
 				DEVELOPMENT_TEAM = 77BNMKA2CZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Base uses Bluetooth to find, connect and transfer data with your heart monitoring devices.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
