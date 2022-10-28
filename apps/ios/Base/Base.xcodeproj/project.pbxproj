@@ -14,9 +14,7 @@
 		34473B9B28F33EE700614834 /* BaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34473B9A28F33EE700614834 /* BaseTests.swift */; };
 		34473BA528F33EE700614834 /* BaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34473BA428F33EE700614834 /* BaseUITests.swift */; };
 		34473BA728F33EE700614834 /* BaseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34473BA628F33EE700614834 /* BaseUITestsLaunchTests.swift */; };
-		34473BAB28F33EE700614834 /* Base WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 34473BAA28F33EE700614834 /* Base WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		34473BB028F33EE700614834 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34473BAF28F33EE700614834 /* Assets.xcassets */; };
-		34473BB628F33EE700614834 /* Base WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 34473BB528F33EE700614834 /* Base WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		34473BBB28F33EE700614834 /* BaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34473BBA28F33EE700614834 /* BaseApp.swift */; };
 		34473BBD28F33EE700614834 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34473BBC28F33EE700614834 /* ContentView.swift */; };
 		34473BBF28F33EE700614834 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34473BBE28F33EE700614834 /* NotificationController.swift */; };
@@ -93,7 +91,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				34473BB628F33EE700614834 /* Base WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,7 +101,6 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				34473BAB28F33EE700614834 /* Base WatchKit App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,19 +108,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		34473B8628F33EE600614834 /* Base.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Base.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34473B8928F33EE600614834 /* BaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApp.swift; sourceTree = "<group>"; };
 		34473B8B28F33EE600614834 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		34473B8D28F33EE600614834 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34473B9028F33EE600614834 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		34473B9628F33EE700614834 /* BaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34473B9A28F33EE700614834 /* BaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTests.swift; sourceTree = "<group>"; };
-		34473BA028F33EE700614834 /* BaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34473BA428F33EE700614834 /* BaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITests.swift; sourceTree = "<group>"; };
 		34473BA628F33EE700614834 /* BaseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		34473BAA28F33EE700614834 /* Base WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Base WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34473BAF28F33EE700614834 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		34473BB528F33EE700614834 /* Base WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Base WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34473BBA28F33EE700614834 /* BaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApp.swift; sourceTree = "<group>"; };
 		34473BBC28F33EE700614834 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		34473BBE28F33EE700614834 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
@@ -134,23 +125,26 @@
 		34473BC728F33EE800614834 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		34473BC928F33EE800614834 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34473BCA28F33EE800614834 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		34473BCF28F33EE800614834 /* Base WatchKit AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Base WatchKit AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34473BD328F33EE800614834 /* Base_WatchKit_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base_WatchKit_AppTests.swift; sourceTree = "<group>"; };
-		34473BD928F33EE800614834 /* Base WatchKit AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Base WatchKit AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34473BDD28F33EE800614834 /* Base_WatchKit_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base_WatchKit_AppUITests.swift; sourceTree = "<group>"; };
 		34473BDF28F33EE800614834 /* Base_WatchKit_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base_WatchKit_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		34473BFE28F3407400614834 /* HeartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartModel.swift; sourceTree = "<group>"; };
 		34473C0128F3409F00614834 /* HeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartView.swift; sourceTree = "<group>"; };
 		34473C0428F340FB00614834 /* HeartProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartProvider.swift; sourceTree = "<group>"; };
 		34473C0728F3414C00614834 /* ConnectivityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityProvider.swift; sourceTree = "<group>"; };
-		34473C0C28F344B900614834 /* Base WatchKit Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Base WatchKit Extension-Bridging-Header.h"; sourceTree = "<group>"; };
-		34473C0D28F344EA00614834 /* Base-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Base-Bridging-Header.h"; sourceTree = "<group>"; };
-		34473C1328F349CA00614834 /* Base-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Base-Bridging-Header.h"; sourceTree = "<group>"; };
-		34473C1428F349CA00614834 /* Base WatchKit Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Base WatchKit Extension-Bridging-Header.h"; sourceTree = "<group>"; };
 		34473C1928F34A0B00614834 /* DetrendedFluctuationWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetrendedFluctuationWrapper.h; sourceTree = "<group>"; };
 		34473C1A28F34A2A00614834 /* DetrendedFluctuationWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DetrendedFluctuationWrapper.mm; sourceTree = "<group>"; };
 		34473C2828F3817800614834 /* DetrendedFluctuation.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DetrendedFluctuation.hpp; sourceTree = "<group>"; };
 		34473C2928F3817800614834 /* DetrendedFluctuation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DetrendedFluctuation.cpp; sourceTree = "<group>"; };
+		3476DBAD290C26E200C9F0E8 /* Base WatchKit Extension-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Base WatchKit Extension-Bridging-Header.h"; sourceTree = "<group>"; };
+		3476DBAE290C26E200C9F0E8 /* Base-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Base-Bridging-Header.h"; sourceTree = "<group>"; };
+		34AE4027290C29F200E4442D /* Base.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Base.app; path = "/Users/shane/Developer/LG/base/apps/ios/Base/build/Debug-iphoneos/Base.app"; sourceTree = "<absolute>"; };
+		34AE4028290C29F200E4442D /* Base WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Base WatchKit App.app"; path = "/Users/shane/Developer/LG/base/apps/ios/Base/build/Debug-watchos/Base WatchKit App.app"; sourceTree = "<absolute>"; };
+		34AE4029290C29F200E4442D /* Base WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = "Base WatchKit Extension.appex"; path = "/Users/shane/Developer/LG/base/apps/ios/Base/build/Debug-watchos/Base WatchKit Extension.appex"; sourceTree = "<absolute>"; };
+		34AE402A290C29F200E4442D /* BaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = BaseTests.xctest; path = "/Users/shane/Developer/LG/base/apps/ios/Base/build/Debug-iphoneos/BaseTests.xctest"; sourceTree = "<absolute>"; };
+		34AE402B290C29F200E4442D /* BaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = BaseUITests.xctest; path = "/Users/shane/Developer/LG/base/apps/ios/Base/build/Debug-iphoneos/BaseUITests.xctest"; sourceTree = "<absolute>"; };
+		34AE402C290C29F200E4442D /* Base WatchKit AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Base WatchKit AppTests.xctest"; path = "/Users/shane/Developer/LG/base/apps/ios/Base/build/Debug-watchos/Base WatchKit AppTests.xctest"; sourceTree = "<absolute>"; };
+		34AE402D290C29F200E4442D /* Base WatchKit AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Base WatchKit AppUITests.xctest"; path = "/Users/shane/Developer/LG/base/apps/ios/Base/build/Debug-watchos/Base WatchKit AppUITests.xctest"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,8 +196,8 @@
 		34473B7D28F33EE600614834 = {
 			isa = PBXGroup;
 			children = (
-				34473C0D28F344EA00614834 /* Base-Bridging-Header.h */,
-				34473C0C28F344B900614834 /* Base WatchKit Extension-Bridging-Header.h */,
+				3476DBAD290C26E200C9F0E8 /* Base WatchKit Extension-Bridging-Header.h */,
+				3476DBAE290C26E200C9F0E8 /* Base-Bridging-Header.h */,
 				34473BFA28F3401600614834 /* Shared */,
 				34473B8828F33EE600614834 /* Base */,
 				34473B9928F33EE700614834 /* BaseTests */,
@@ -212,24 +206,7 @@
 				34473BB928F33EE700614834 /* Base WatchKit Extension */,
 				34473BD228F33EE800614834 /* Base WatchKit AppTests */,
 				34473BDC28F33EE800614834 /* Base WatchKit AppUITests */,
-				34473B8728F33EE600614834 /* Products */,
-				34473C1328F349CA00614834 /* Base-Bridging-Header.h */,
-				34473C1428F349CA00614834 /* Base WatchKit Extension-Bridging-Header.h */,
 			);
-			sourceTree = "<group>";
-		};
-		34473B8728F33EE600614834 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				34473B8628F33EE600614834 /* Base.app */,
-				34473B9628F33EE700614834 /* BaseTests.xctest */,
-				34473BA028F33EE700614834 /* BaseUITests.xctest */,
-				34473BAA28F33EE700614834 /* Base WatchKit App.app */,
-				34473BB528F33EE700614834 /* Base WatchKit Extension.appex */,
-				34473BCF28F33EE800614834 /* Base WatchKit AppTests.xctest */,
-				34473BD928F33EE800614834 /* Base WatchKit AppUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		34473B8828F33EE600614834 /* Base */ = {
@@ -391,7 +368,7 @@
 			);
 			name = Base;
 			productName = Base;
-			productReference = 34473B8628F33EE600614834 /* Base.app */;
+			productReference = 34AE4027290C29F200E4442D /* Base.app */;
 			productType = "com.apple.product-type.application";
 		};
 		34473B9528F33EE700614834 /* BaseTests */ = {
@@ -409,7 +386,7 @@
 			);
 			name = BaseTests;
 			productName = BaseTests;
-			productReference = 34473B9628F33EE700614834 /* BaseTests.xctest */;
+			productReference = 34AE402A290C29F200E4442D /* BaseTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		34473B9F28F33EE700614834 /* BaseUITests */ = {
@@ -427,7 +404,7 @@
 			);
 			name = BaseUITests;
 			productName = BaseUITests;
-			productReference = 34473BA028F33EE700614834 /* BaseUITests.xctest */;
+			productReference = 34AE402B290C29F200E4442D /* BaseUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		34473BA928F33EE700614834 /* Base WatchKit App */ = {
@@ -444,7 +421,7 @@
 			);
 			name = "Base WatchKit App";
 			productName = "Base WatchKit App";
-			productReference = 34473BAA28F33EE700614834 /* Base WatchKit App.app */;
+			productReference = 34AE4028290C29F200E4442D /* Base WatchKit App.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		34473BB428F33EE700614834 /* Base WatchKit Extension */ = {
@@ -461,7 +438,7 @@
 			);
 			name = "Base WatchKit Extension";
 			productName = "Base WatchKit Extension";
-			productReference = 34473BB528F33EE700614834 /* Base WatchKit Extension.appex */;
+			productReference = 34AE4029290C29F200E4442D /* Base WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		34473BCE28F33EE800614834 /* Base WatchKit AppTests */ = {
@@ -479,7 +456,7 @@
 			);
 			name = "Base WatchKit AppTests";
 			productName = "Base WatchKit AppTests";
-			productReference = 34473BCF28F33EE800614834 /* Base WatchKit AppTests.xctest */;
+			productReference = 34AE402C290C29F200E4442D /* Base WatchKit AppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		34473BD828F33EE800614834 /* Base WatchKit AppUITests */ = {
@@ -497,7 +474,7 @@
 			);
 			name = "Base WatchKit AppUITests";
 			productName = "Base WatchKit AppUITests";
-			productReference = 34473BD928F33EE800614834 /* Base WatchKit AppUITests.xctest */;
+			productReference = 34AE402D290C29F200E4442D /* Base WatchKit AppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -548,7 +525,7 @@
 				Base,
 			);
 			mainGroup = 34473B7D28F33EE600614834;
-			productRefGroup = 34473B8728F33EE600614834 /* Products */;
+			productRefGroup = 34473B7D28F33EE600614834;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
