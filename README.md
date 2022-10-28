@@ -1,5 +1,5 @@
-### 🏃‍♂️
+### 🌄
 
 # Base
 
-Measured zone 2 training
+Measurable zone 2 training
