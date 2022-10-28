@@ -1,8 +1,5 @@
 //
 //  BaseUITests.swift
-//  BaseUITests
-//
-//  Created by Shane on 10/9/22.
 //
 
 import XCTest

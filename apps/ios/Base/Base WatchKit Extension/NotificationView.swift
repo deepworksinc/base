@@ -1,9 +1,6 @@
 //
 //  NotificationView.swift
-//  Base WatchKit Extension
-//
-//  Created by Shane on 10/9/22.
-//
+//  
 
 import SwiftUI
 

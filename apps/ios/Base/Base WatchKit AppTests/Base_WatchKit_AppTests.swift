@@ -1,8 +1,5 @@
 //
 //  Base_WatchKit_AppTests.swift
-//  Base WatchKit AppTests
-//
-//  Created by Shane on 10/9/22.
 //
 
 import XCTest
