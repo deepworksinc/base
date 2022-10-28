@@ -1,5 +1,5 @@
 //
-//  Base WatchKit Extension-Bridging-Header.h
+// Base_WatchKit_Extension-Bridging-Header.h
 //
 
 #ifndef Base_WatchKit_Extension_Bridging_Header_h
