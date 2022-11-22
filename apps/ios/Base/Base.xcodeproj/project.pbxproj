@@ -140,8 +140,8 @@
 		345CF3F8290C4B7600A7BBD7 /* DetrendedFluctuationWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetrendedFluctuationWrapper.h; sourceTree = "<group>"; };
 		345CF3FC290C4B7600A7BBD7 /* ConnectivityProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectivityProvider.swift; sourceTree = "<group>"; };
 		345CF3FE290C4B7600A7BBD7 /* HeartModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartModel.swift; sourceTree = "<group>"; };
-		345CF400290C4B7600A7BBD7 /* DetrendedFluctuation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DetrendedFluctuation.cpp; sourceTree = "<group>"; };
-		345CF401290C4B7600A7BBD7 /* DetrendedFluctuation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DetrendedFluctuation.hpp; sourceTree = "<group>"; };
+		345CF400290C4B7600A7BBD7 /* DetrendedFluctuation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DetrendedFluctuation.cpp; path = "../../../../services/detrended-fluctuation/DetrendedFluctuation.cpp"; sourceTree = "<group>"; };
+		345CF401290C4B7600A7BBD7 /* DetrendedFluctuation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = DetrendedFluctuation.hpp; path = "../../../../services/detrended-fluctuation/DetrendedFluctuation.hpp"; sourceTree = "<group>"; };
 		345CF403290C4B7600A7BBD7 /* HeartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartView.swift; sourceTree = "<group>"; };
 		345CF477290C50EB00A7BBD7 /* DetrendedFluctuationWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DetrendedFluctuationWrapper.mm; sourceTree = "<group>"; };
 		345CF47A290C52B300A7BBD7 /* BaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApp.swift; sourceTree = "<group>"; };
@@ -200,6 +200,7 @@
 		345CF34F290C494A00A7BBD7 = {
 			isa = PBXGroup;
 			children = (
+				345CF3FF290C4B7600A7BBD7 /* External */,
 				345CF482290C558500A7BBD7 /* Base-Bridging-Header.h */,
 				345CF484290C5A1D00A7BBD7 /* Base WatchKit Extension-Bridging-Header.h */,
 				345CF3F6290C4B7600A7BBD7 /* Shared */,
@@ -319,7 +320,6 @@
 				345CF3F7290C4B7600A7BBD7 /* Wrappers */,
 				345CF3FA290C4B7600A7BBD7 /* Providers */,
 				345CF3FD290C4B7600A7BBD7 /* Models */,
-				345CF3FF290C4B7600A7BBD7 /* External */,
 				345CF402290C4B7600A7BBD7 /* Views */,
 			);
 			path = Shared;
