@@ -15,7 +15,7 @@ using std::vector;
 
 class DetrendedFluctuation {
 public:
-    float compute(vector<int>& rrs);
+    float push(vector<int>& rrs);
 };
 
 #endif /* DetrendedFluctuation_hpp */

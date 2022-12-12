@@ -117,12 +117,10 @@ extension HeartProvider: CBPeripheralDelegate {
         let byteArray = [UInt8](characteristicData)
         
         // See: https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.characteristic.heart_rate_measurement.xml
-        // The heart rate mesurement is in the 2nd, or in the 2nd and 3rd bytes, i.e. one one or in two bytes
-        // The first byte of the first bit specifies the length of the heart rate data, 0 == 1 byte, 1 == 2 bytes
         var bpm = 0
         let firstBitValue = byteArray[0] & 1
         if firstBitValue == 0 {
-            // Heart Rate Value Format is in the 2nd byte
+            // BPM value Format is in the 2nd byte
             bpm = Int(byteArray[1])
         } else {
             // Heart Rate Value Format is in the 2nd and 3rd bytes
@@ -148,7 +146,7 @@ extension HeartProvider: CBPeripheralDelegate {
                 rrs.append(Int(byteArray[4]) + (Int(byteArray[5]) << 8))
             }
         }
-        let df = DetrendedFluctuationWrapper().compute(rrs)
+        let df = DetrendedFluctuationWrapper().push(rrs)
         return HeartState(bpm: bpm, df: df as! Float)
     }
 }
