@@ -1,7 +1,3 @@
-//
-//  DetrendedFluctuation.cpp
-//
-
 #include "DetrendedFluctuation.hpp"
 #include <algorithm>
 #include <cmath>
@@ -16,7 +12,7 @@ using std::cout;
 using std::deque;
 using std::transform;
 using std::vector;
-using Eigen::MatrixXd;
+using Eigen::MatrixXf;
 
 // DF service state data
 bool initialized = false;
@@ -80,41 +76,63 @@ float DetrendedFluctuation::_compute() {
         partial_sum(rrs_sub_mean.begin(), rrs_sub_mean.end(), y_n.begin());
             
         // Step 2: Divide the profile into N non-overlapping segments of equal length s
-        int first = static_cast<int>(s);
-        int second = static_cast<int>(floor(L / s));
-        vector<int> shape = { first, second };
-        int nwSize = shape[0] * shape[1];
+        int N = floor(L / s);
+        vector<vector<float>> y_n_segments(N);
+        for (int i = 0; i < N; ++i) {
+            y_n_segments[i] = vector<float>(s);
+            for (int j = 0; j < s; ++j) {
+                y_n_segments[i][j] = y_n[i * s + j];
+            }
+        }
         
-        // Todo polyfit!
-        
-        // https://eigen.tuxfamily.org/dox-devel/group__TutorialReshape.html
-        // beginning to end, here we reshape so that we have a number of segments based on the scale used at this cycle
-        // Y_n1 = np.reshape(y_n[0:nwSize], shape, order="F")
-        // Y_n1 = Y_n1.T
-        // end to beginning
-        // Y_n2 = np.reshape(y_n[len(y_n) - (nwSize):len(y_n)], shape, order="F")
-        // Y_n2 = Y_n2.T
-        // concatenate
-        // Y_n = np.vstack((Y_n1, Y_n2))
-
         // Step 3: Calculate the local trend for each 2Ns segments by a least squares fit of the series
-        // for cut in np.arange(0, 2 * shape[1]):
-            // xcut = np.arange(0, shape[0])
-            // pl = np.polyfit(xcut, Y_n[cut,:], m)
-            // Yfit = np.polyval(pl, xcut)
-            // arr = Yfit - Y_n[cut,:]
-            // rms.append(np.sqrt(np.mean(arr * arr)))
-
-        // if (len(rms) > 0):
-            // F[count] = np.power((1 / (shape[1] * 2)) * np.sum(np.power(rms, 2)), 1/2)
-        // count = count + 1
+        for (int i = 0; i < N; ++i) {
+            MatrixXf X = MatrixXf::Zero(s, m + 1);
+            for (int j = 0; j < s; ++j) {
+                X(j, 0) = 1;
+                X(j, 1) = j;
+            }
+            MatrixXf Y = MatrixXf::Zero(s, 1);
+            for (int j = 0; j < s; ++j) {
+                Y(j, 0) = y_n_segments[i][j];
+            }
+            MatrixXf X_transpose = X.transpose();
+            MatrixXf X_transpose_X = X_transpose * X;
+            MatrixXf X_transpose_X_inverse = X_transpose_X.inverse();
+            MatrixXf X_transpose_X_inverse_X_transpose = X_transpose_X_inverse * X_transpose;
+            MatrixXf beta = X_transpose_X_inverse_X_transpose * Y;
+            MatrixXf Y_hat = X * beta;
+            MatrixXf Y_hat_minus_Y = Y_hat - Y;
+            MatrixXf Y_hat_minus_Y_transpose = Y_hat_minus_Y.transpose();
+            MatrixXf Y_hat_minus_Y_transpose_Y_hat_minus_Y = Y_hat_minus_Y_transpose * Y_hat_minus_Y;
+            float rms_i = sqrt(Y_hat_minus_Y_transpose_Y_hat_minus_Y(0, 0) / s);
+            rms.push_back(rms_i);
+        }
+        
+        // Step 4: Calculate the root mean square (RMS) of the detrended profile
+        float rms_mean = accumulate(rms.begin(), rms.end(), 0) / N;
+        F[count] = rms_mean;
+        count++;
     }
     
-    // pl2 = np.polyfit(np.log2(scales), np.log2(F), 1)
-    // alpha = pl2[0]
-    // return alpha
-    
-    return 1.0;
+    // Step 5: Calculate the scaling exponent alpha 1
+    vector<float> log_F;
+    for (int i = 0; i < F.size(); ++i) {
+        log_F.push_back(log(F[i]));
+    }
+    vector<float> log_s;
+    for (int i = 0; i < scales.size(); ++i) {
+        log_s.push_back(log(scales[i]));
+    }
+    float log_F_mean = accumulate(log_F.begin(), log_F.end(), 0) / log_F.size();
+    float log_s_mean = accumulate(log_s.begin(), log_s.end(), 0) / log_s.size();
+    float numerator = 0;
+    float denominator = 0;
+    for (int i = 0; i < log_F.size(); ++i) {
+        numerator += (log_F[i] - log_F_mean) * (log_s[i] - log_s_mean);
+        denominator += pow(log_s[i] - log_s_mean, 2);
+    }
+    return numerator / denominator;
 }
 
 void DetrendedFluctuation::_initialize() {
@@ -135,4 +153,12 @@ vector<float> DetrendedFluctuation::_scales(double a, double b, int k) {
         scales.push_back(floor(pow(10, x)));
     });
     return scales;
+}
+
+int main() {
+    vector<int> rrs = { 800, 801, 802, 803, 804, 805, 806, 807, 808, 809 };
+    DetrendedFluctuation df;
+    float alpha_1 = df.push(rrs);
+    cout << "alpha_1: " << alpha_1 << "\n";
+    return 0;
 }

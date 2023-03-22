@@ -1,5 +1,5 @@
 //
-//  DetrendedFluctuation.hpp
+//  DFA.hpp
 //
 
 // Todo move shared service in monorepo root (base/services/detrended-fluctuation)
