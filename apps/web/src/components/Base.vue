@@ -1,21 +1,13 @@
 <template>
-  <h3 class="logo">
-    <img src="/logo.png" alt="Base logo" />
-    <div>Base</div>
-  </h3>
+  <h1>
+    <span>100</span>
+    <span class="postscript">/100</span>
+  </h1>
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+.postscript {
+  font-weight: 400;
+  font-size: medium;
 }
 </style>
