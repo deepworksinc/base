@@ -1,4 +1,4 @@
-<img width="50px" alt="Base+ logo" src="apps/web/src/public/logo.png">
+<img width="50px" alt="Base+ logo" src="apps/web/public/logo.png">
 
 # Base
 
