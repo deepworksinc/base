@@ -10,7 +10,7 @@ struct HeartView: View {
     var body: some View {
         VStack {
             Text("\(heartProvider.state.bpm)")
-            Text("\(heartProvider.state.df)")
+            Text("\(heartProvider.state.dfa1)")
         }
     }
 }

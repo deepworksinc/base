@@ -2,10 +2,8 @@
 //  DFA.hpp
 //
 
-// Todo move shared service in monorepo root (base/services/detrended-fluctuation)
-
-#ifndef DetrendedFluctuation_hpp
-#define DetrendedFluctuation_hpp
+#ifndef DFA1_hpp
+#define DFA1_hpp
 
 #include <stdio.h>
 #include <string>
@@ -13,7 +11,7 @@
 
 using std::vector;
 
-class DetrendedFluctuation {
+class DFA1 {
 public:
     float push(vector<int>& rrs);
     float _compute();
@@ -21,4 +19,4 @@ public:
     vector<float> _scales(double a, double b, int k);
 };
 
-#endif /* DetrendedFluctuation_hpp */
+#endif /* DFA1 */

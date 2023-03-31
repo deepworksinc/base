@@ -11,7 +11,7 @@ let heartMeasurementCharacteristicCBUUID = CBUUID(string: "2A37")
 
 class HeartProvider: NSObject, ObservableObject {
     @ObservedObject private var connectivityManager = ConnectivityProvider.shared
-    @Published var state = HeartState(bpm: 0, df: 0.0)
+    @Published var state = HeartState(bpm: 0, dfa1: 0.0)
     
     var cancellableBag = Set<AnyCancellable>()
     var centralManager: CBCentralManager!
@@ -113,7 +113,7 @@ extension HeartProvider: CBPeripheralDelegate {
     }
     
     private func parseHeartState(from characteristic: CBCharacteristic) -> HeartState {
-        guard let characteristicData = characteristic.value else { return HeartState(bpm: -1, df: -1.0) }
+        guard let characteristicData = characteristic.value else { return HeartState(bpm: -1, dfa1: -1.0) }
         let byteArray = [UInt8](characteristicData)
         
         // See: https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.characteristic.heart_rate_measurement.xml
@@ -146,7 +146,7 @@ extension HeartProvider: CBPeripheralDelegate {
                 rrs.append(Int(byteArray[4]) + (Int(byteArray[5]) << 8))
             }
         }
-        let df = DetrendedFluctuationWrapper().push(rrs)
-        return HeartState(bpm: bpm, df: df as! Float)
+        let dfa1 = DFA1Wrapper().push(rrs)
+        return HeartState(bpm: bpm, dfa1: dfa1 as! Float)
     }
 }

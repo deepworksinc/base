@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import Base from './components/Base.vue'
+import HeartView from './components/HeartView.vue'
 </script>
 
 <template>
   <div>
-    <Base />
+    <HeartView />
   </div>
 </template>

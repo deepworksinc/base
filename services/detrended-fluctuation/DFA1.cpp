@@ -1,4 +1,4 @@
-#include "DetrendedFluctuation.hpp"
+#include "DFA1.hpp"
 #include <algorithm>
 #include <cmath>
 #include <deque>
@@ -14,12 +14,12 @@ using std::transform;
 using std::vector;
 using Eigen::MatrixXf;
 
-// DF service state data
+// Service state data
 bool initialized = false;
 vector<float> rr_history;
 deque<float> rr_buffer;
 
-// DF algorithm constants
+// Algorithm constants
 const int max_buffer_size = 120;
 const float artifact_correction_threshold = 0.05;
 const int lower_scale_limit = 4;
@@ -32,7 +32,7 @@ vector<float> scales;
 vector<int> F;
 int count = 0;
 
-float DetrendedFluctuation::push(vector<int>& rrs) {
+float DFA1::push(vector<int>& rrs) {
     // Loop over RR values and update buffer
     for (int i = 0; i < rrs.size(); ++i) {
         
@@ -57,7 +57,7 @@ float DetrendedFluctuation::push(vector<int>& rrs) {
     return df;
 }
 
-float DetrendedFluctuation::_compute() {
+float DFA1::_compute() {
     if (!initialized) {
         _initialize();
     }
@@ -135,13 +135,13 @@ float DetrendedFluctuation::_compute() {
     return numerator / denominator;
 }
 
-void DetrendedFluctuation::_initialize() {
+void DFA1::_initialize() {
     scales = _scales(log10(pow(10, start)), log10(pow(10, stop)), scale_density);
     F.resize(scales.size());
     initialized = true;
 }
 
-vector<float> DetrendedFluctuation::_scales(double a, double b, int k) {
+vector<float> DFA1::_scales(double a, double b, int k) {
     const auto exp_scale = (b - a) / (k - 1);
     vector<double> logspace;
     logspace.reserve(k);
@@ -157,7 +157,7 @@ vector<float> DetrendedFluctuation::_scales(double a, double b, int k) {
 
 int main() {
     vector<int> rrs = { 800, 801, 802, 803, 804, 805, 806, 807, 808, 809 };
-    DetrendedFluctuation df;
+    DFA1 df;
     float alpha_1 = df.push(rrs);
     cout << "alpha_1: " << alpha_1 << "\n";
     return 0;

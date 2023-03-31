@@ -29,12 +29,12 @@
 		345CF409290C4B7600A7BBD7 /* ConnectivityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345CF3FC290C4B7600A7BBD7 /* ConnectivityProvider.swift */; };
 		345CF40A290C4B7600A7BBD7 /* HeartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345CF3FE290C4B7600A7BBD7 /* HeartModel.swift */; };
 		345CF40B290C4B7600A7BBD7 /* HeartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345CF3FE290C4B7600A7BBD7 /* HeartModel.swift */; };
-		345CF40C290C4B7600A7BBD7 /* DetrendedFluctuation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 345CF400290C4B7600A7BBD7 /* DetrendedFluctuation.cpp */; };
-		345CF40D290C4B7600A7BBD7 /* DetrendedFluctuation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 345CF400290C4B7600A7BBD7 /* DetrendedFluctuation.cpp */; };
+		345CF40C290C4B7600A7BBD7 /* DFA1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 345CF400290C4B7600A7BBD7 /* DFA1.cpp */; };
+		345CF40D290C4B7600A7BBD7 /* DFA1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 345CF400290C4B7600A7BBD7 /* DFA1.cpp */; };
 		345CF40E290C4B7600A7BBD7 /* HeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345CF403290C4B7600A7BBD7 /* HeartView.swift */; };
 		345CF40F290C4B7600A7BBD7 /* HeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345CF403290C4B7600A7BBD7 /* HeartView.swift */; };
-		345CF478290C50EB00A7BBD7 /* DetrendedFluctuationWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 345CF477290C50EB00A7BBD7 /* DetrendedFluctuationWrapper.mm */; };
-		345CF479290C50EB00A7BBD7 /* DetrendedFluctuationWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 345CF477290C50EB00A7BBD7 /* DetrendedFluctuationWrapper.mm */; };
+		345CF478290C50EB00A7BBD7 /* DFA1Wrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 345CF477290C50EB00A7BBD7 /* DFA1Wrapper.mm */; };
+		345CF479290C50EB00A7BBD7 /* DFA1Wrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 345CF477290C50EB00A7BBD7 /* DFA1Wrapper.mm */; };
 		345CF47B290C52B300A7BBD7 /* BaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345CF47A290C52B300A7BBD7 /* BaseApp.swift */; };
 		345CF47E290C52F600A7BBD7 /* BaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345CF47D290C52F600A7BBD7 /* BaseApp.swift */; };
 		345CF480290C53C000A7BBD7 /* HeartProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345CF47F290C53C000A7BBD7 /* HeartProvider.swift */; };
@@ -137,13 +137,13 @@
 		345CF3AB290C494C00A7BBD7 /* Base WatchKit AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Base WatchKit AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		345CF3AF290C494C00A7BBD7 /* Base_WatchKit_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base_WatchKit_AppUITests.swift; sourceTree = "<group>"; };
 		345CF3B1290C494C00A7BBD7 /* Base_WatchKit_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base_WatchKit_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		345CF3F8290C4B7600A7BBD7 /* DetrendedFluctuationWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetrendedFluctuationWrapper.h; sourceTree = "<group>"; };
+		345CF3F8290C4B7600A7BBD7 /* DFA1Wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFA1Wrapper.h; sourceTree = "<group>"; };
 		345CF3FC290C4B7600A7BBD7 /* ConnectivityProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectivityProvider.swift; sourceTree = "<group>"; };
 		345CF3FE290C4B7600A7BBD7 /* HeartModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartModel.swift; sourceTree = "<group>"; };
-		345CF400290C4B7600A7BBD7 /* DetrendedFluctuation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DetrendedFluctuation.cpp; path = "../../../../services/detrended-fluctuation/DetrendedFluctuation.cpp"; sourceTree = "<group>"; };
-		345CF401290C4B7600A7BBD7 /* DetrendedFluctuation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = DetrendedFluctuation.hpp; path = "../../../../services/detrended-fluctuation/DetrendedFluctuation.hpp"; sourceTree = "<group>"; };
+		345CF400290C4B7600A7BBD7 /* DFA1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DFA1.cpp; path = "../../../../services/detrended-fluctuation/DFA1.cpp"; sourceTree = "<group>"; };
+		345CF401290C4B7600A7BBD7 /* DFA1.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = DFA1.hpp; path = "../../../../services/detrended-fluctuation/DFA1.hpp"; sourceTree = "<group>"; };
 		345CF403290C4B7600A7BBD7 /* HeartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartView.swift; sourceTree = "<group>"; };
-		345CF477290C50EB00A7BBD7 /* DetrendedFluctuationWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DetrendedFluctuationWrapper.mm; sourceTree = "<group>"; };
+		345CF477290C50EB00A7BBD7 /* DFA1Wrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DFA1Wrapper.mm; sourceTree = "<group>"; };
 		345CF47A290C52B300A7BBD7 /* BaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApp.swift; sourceTree = "<group>"; };
 		345CF47D290C52F600A7BBD7 /* BaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApp.swift; sourceTree = "<group>"; };
 		345CF47F290C53C000A7BBD7 /* HeartProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartProvider.swift; sourceTree = "<group>"; };
@@ -328,8 +328,8 @@
 		345CF3F7290C4B7600A7BBD7 /* Wrappers */ = {
 			isa = PBXGroup;
 			children = (
-				345CF3F8290C4B7600A7BBD7 /* DetrendedFluctuationWrapper.h */,
-				345CF477290C50EB00A7BBD7 /* DetrendedFluctuationWrapper.mm */,
+				345CF3F8290C4B7600A7BBD7 /* DFA1Wrapper.h */,
+				345CF477290C50EB00A7BBD7 /* DFA1Wrapper.mm */,
 			);
 			path = Wrappers;
 			sourceTree = "<group>";
@@ -354,8 +354,8 @@
 		345CF3FF290C4B7600A7BBD7 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				345CF400290C4B7600A7BBD7 /* DetrendedFluctuation.cpp */,
-				345CF401290C4B7600A7BBD7 /* DetrendedFluctuation.hpp */,
+				345CF400290C4B7600A7BBD7 /* DFA1.cpp */,
+				345CF401290C4B7600A7BBD7 /* DFA1.hpp */,
 			);
 			path = External;
 			sourceTree = "<group>";
@@ -619,11 +619,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				345CF40C290C4B7600A7BBD7 /* DetrendedFluctuation.cpp in Sources */,
+				345CF40C290C4B7600A7BBD7 /* DFA1.cpp in Sources */,
 				345CF40E290C4B7600A7BBD7 /* HeartView.swift in Sources */,
 				345CF35E290C494A00A7BBD7 /* ContentView.swift in Sources */,
 				345CF47B290C52B300A7BBD7 /* BaseApp.swift in Sources */,
-				345CF478290C50EB00A7BBD7 /* DetrendedFluctuationWrapper.mm in Sources */,
+				345CF478290C50EB00A7BBD7 /* DFA1Wrapper.mm in Sources */,
 				345CF480290C53C000A7BBD7 /* HeartProvider.swift in Sources */,
 				345CF408290C4B7600A7BBD7 /* ConnectivityProvider.swift in Sources */,
 				345CF40A290C4B7600A7BBD7 /* HeartModel.swift in Sources */,
@@ -654,9 +654,9 @@
 				345CF40B290C4B7600A7BBD7 /* HeartModel.swift in Sources */,
 				345CF47E290C52F600A7BBD7 /* BaseApp.swift in Sources */,
 				345CF40F290C4B7600A7BBD7 /* HeartView.swift in Sources */,
-				345CF40D290C4B7600A7BBD7 /* DetrendedFluctuation.cpp in Sources */,
+				345CF40D290C4B7600A7BBD7 /* DFA1.cpp in Sources */,
 				345CF481290C53C000A7BBD7 /* HeartProvider.swift in Sources */,
-				345CF479290C50EB00A7BBD7 /* DetrendedFluctuationWrapper.mm in Sources */,
+				345CF479290C50EB00A7BBD7 /* DFA1Wrapper.mm in Sources */,
 				345CF391290C494C00A7BBD7 /* NotificationController.swift in Sources */,
 				345CF38F290C494C00A7BBD7 /* ContentView.swift in Sources */,
 				345CF395290C494C00A7BBD7 /* ComplicationController.swift in Sources */,

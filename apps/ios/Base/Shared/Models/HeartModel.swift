@@ -7,8 +7,8 @@ import Foundation
 struct HeartState: Codable {
     // Beats per minute - the user's intensity
     let bpm: Int
-    // Detrended fluctuation - the user's zone thresholds
-    let df: Float
+    // DFA1 - the user's threshold zone proxy
+    let dfa1: Float
 }
 
 struct HeartStateMessage: Identifiable {
