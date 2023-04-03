@@ -11,7 +11,7 @@ let heartMeasurementCharacteristicCBUUID = CBUUID(string: "2A37")
 
 class HeartProvider: NSObject, ObservableObject {
     @ObservedObject private var connectivityManager = ConnectivityProvider.shared
-    @Published var state = HeartState(bpm: 0, dfa1: 0.0)
+    @Published var state = HeartState(bpm: 0, dfa1: 0.0, rmssd: 0.0)
     
     var cancellableBag = Set<AnyCancellable>()
     var centralManager: CBCentralManager!
@@ -113,40 +113,15 @@ extension HeartProvider: CBPeripheralDelegate {
     }
     
     private func parseHeartState(from characteristic: CBCharacteristic) -> HeartState {
-        guard let characteristicData = characteristic.value else { return HeartState(bpm: -1, dfa1: -1.0) }
+        guard let characteristicData = characteristic.value else { return HeartState(bpm: -1, dfa1: -1, rmssd: -1.0) }
         let byteArray = [UInt8](characteristicData)
         
-        // See: https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.characteristic.heart_rate_measurement.xml
-        var bpm = 0
-        let firstBitValue = byteArray[0] & 1
-        if firstBitValue == 0 {
-            // BPM value Format is in the 2nd byte
-            bpm = Int(byteArray[1])
-        } else {
-            // Heart Rate Value Format is in the 2nd and 3rd bytes
-            bpm = (Int(byteArray[1]) << 8) + Int(byteArray[2])
-        }
-        var rrs: [Int] = []
-        let fifthBitValue = byteArray[0] & 16
-        if fifthBitValue != 0 {
-            if [16,18,20,22].contains(byteArray[0]) {
-                //rr-value in [2] und [3]
-                rrs.append(Int(byteArray[2]) + (Int(byteArray[3]) << 8))
-            }
-            if [17,19,21,23].contains(byteArray[0]) {
-                //rr-value in [3] und [4]
-                rrs.append(Int(byteArray[3]) + (Int(byteArray[4]) << 8))
-            }
-            if [24,26,28,30].contains(byteArray[0]) {
-                //rr-value in [4] und [5]
-                rrs.append(Int(byteArray[4]) + (Int(byteArray[5]) << 8))
-            }
-            if [25,27,29,31].contains(byteArray[0]) {
-                //rr-value in [5] und [6]
-                rrs.append(Int(byteArray[4]) + (Int(byteArray[5]) << 8))
-            }
-        }
-        let dfa1 = DFA1Wrapper().push(rrs)
-        return HeartState(bpm: bpm, dfa1: dfa1 as! Float)
+        let features = HRVWrapper().push(byteArray)!
+        
+        guard let bpm = features["bpm"] as? Int else { return HeartState(bpm: -1, dfa1: -1, rmssd: -1.0) }
+        guard let dfa1 = features["dfa1"] as? Float else { return HeartState(bpm: -1, dfa1: -1, rmssd: -1.0) }
+        guard let rmssd = features["rmssd"] as? Float else { return HeartState(bpm: -1, dfa1: -1, rmssd: -1.0) }
+
+        return HeartState(bpm: bpm, dfa1: dfa1, rmssd: rmssd)
     }
 }

@@ -5,6 +5,6 @@
 #ifndef Base_WatchKit_Extension_Bridging_Header_h
 #define Base_WatchKit_Extension_Bridging_Header_h
 
-#import "DetrendedFluctuationWrapper.h"
+#import "HRVWrapper.h"
 
 #endif /* Base_WatchKit_Extension_Bridging_Header_h */

@@ -5,6 +5,6 @@
 #ifndef Base_Bridging_Header_h
 #define Base_Bridging_Header_h
 
-#import "DFA1Wrapper.h"
+#import "HRVWrapper.h"
 
 #endif /* Base_Bridging_Header_h */

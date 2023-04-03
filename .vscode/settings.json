@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.liquid": "liquid",
+        "vector": "cpp"
+    }
+}

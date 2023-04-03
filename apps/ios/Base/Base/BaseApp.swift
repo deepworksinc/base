@@ -10,9 +10,7 @@ struct BaseApp: App {
     
     @SceneBuilder var body: some Scene {
         WindowGroup {
-            NavigationView {
-                ContentView().environmentObject(heartProvider)
-            }
+            ContentView().environmentObject(heartProvider)
         }
     }
 }

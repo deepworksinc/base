@@ -11,6 +11,7 @@ struct HeartView: View {
         VStack {
             Text("\(heartProvider.state.bpm)")
             Text("\(heartProvider.state.dfa1)")
+            Text("\(heartProvider.state.rmssd)")
         }
     }
 }
