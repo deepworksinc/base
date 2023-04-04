@@ -1,5 +1,7 @@
 # @base/web
 
+Vue application for web browsers
+
 ## Notes
 
-Need to port the C++ algorithm to WebAssembly. See https://developer.mozilla.org/en-US/docs/WebAssembly/C_to_wasm.
+Will consume the @base/hrv library in WASM. See https://developer.mozilla.org/en-US/docs/WebAssembly/C_to_wasm.
