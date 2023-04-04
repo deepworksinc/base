@@ -10,8 +10,11 @@ struct HeartView: View {
     var body: some View {
         VStack {
             Text("\(heartProvider.state.bpm)")
+                .foregroundColor(.white)
             Text("\(heartProvider.state.dfa1)")
+                .foregroundColor(.white)
             Text("\(heartProvider.state.rmssd)")
+                .foregroundColor(.white)
         }
     }
 }

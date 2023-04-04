@@ -1,9 +1,14 @@
 :root {
   color: white;
 
-  background: rgb(250,221,132);
-  background: linear-gradient(225deg, rgba(250,221,132,1) 0%, rgba(240,137,74,1) 10%, rgba(169,92,124,1) 30%, rgba(88,78,141,1) 100%);
-
+  background: rgba(88, 78, 141, 1);
+  background-image: linear-gradient(
+    235deg,
+    rgba(250, 221, 132, 1) 0%,
+    rgba(240, 137, 74, 1) 10%,
+    rgba(169, 92, 124, 1) 30%,
+    rgba(88, 78, 141, 1) 100%
+  );
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
