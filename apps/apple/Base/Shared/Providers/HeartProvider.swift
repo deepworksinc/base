@@ -8,6 +8,9 @@ import SwiftUI
 
 let heartProviderCBUUID = CBUUID(string: "0x180D")
 let heartMeasurementCharacteristicCBUUID = CBUUID(string: "2A37")
+let hrv = HRVWrapper()
+let defaultState = HeartState(bpm: 0, dfa1: 0.0, rmssd: 0.0)
+let currentState = defaultState
 
 class HeartProvider: NSObject, ObservableObject {
     @ObservedObject private var connectivityManager = ConnectivityProvider.shared
@@ -105,23 +108,25 @@ extension HeartProvider: CBPeripheralDelegate {
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         switch characteristic.uuid {
         case heartMeasurementCharacteristicCBUUID:
-            let state = parseHeartState(from: characteristic)
+            let state = getHeartState(from: characteristic)
             onHeartStateReceived(state)
         default:
             print("Unhandled Characteristic UUID: \(characteristic.uuid)")
         }
     }
     
-    private func parseHeartState(from characteristic: CBCharacteristic) -> HeartState {
-        guard let characteristicData = characteristic.value else { return HeartState(bpm: -1, dfa1: -1, rmssd: -1.0) }
+    private func getHeartState(from characteristic: CBCharacteristic) -> HeartState {
+        guard let characteristicData = characteristic.value else { return currentState || defaultState }
         let byteArray = [UInt8](characteristicData)
         
-        let features = HRVWrapper().push(byteArray)!
+        let features = hrv.computeFeatures(byteArray)!
         
-        guard let bpm = features["bpm"] as? Int else { return HeartState(bpm: -1, dfa1: -1, rmssd: -1.0) }
-        guard let dfa1 = features["dfa1"] as? Float else { return HeartState(bpm: -1, dfa1: -1, rmssd: -1.0) }
-        guard let rmssd = features["rmssd"] as? Float else { return HeartState(bpm: -1, dfa1: -1, rmssd: -1.0) }
+        guard let bpm = features["bpm"] as? Int else { return currentState || defaultState }
+        guard let dfa1 = features["dfa1"] as? Float else { return currentState || defaultState }
+        guard let rmssd = features["rmssd"] as? Float else { return currentState || defaultState }
 
-        return HeartState(bpm: bpm, dfa1: dfa1, rmssd: rmssd)
+        currentState = HeartState(bpm: bpm, dfa1: dfa1, rmssd: rmssd)
+
+        return currentState
     }
 }

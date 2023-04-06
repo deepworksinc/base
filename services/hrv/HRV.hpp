@@ -11,24 +11,31 @@
 
 using std::vector;
 
-struct Data {
+// Service input data
+struct DecodedInput
+{
     int bpm;
     vector<int> rrs;
 };
 
-struct Features {
+// Service state data
+struct Features
+{
     int bpm;
     float dfa1;
     float rmssd;
 };
 
-class HRV {
+// HRV class for raw data processing and feature computation
+class HRV
+{
 public:
-    Features push(vector<uint8_t>& bytes);
-    float _compute();
-    void _initialize();
-    Data _decode(vector<uint8_t>& bytes);
-    vector<float> _scales(double a, double b, int k);
+    Features computeFeatures(vector<uint8_t> &input);
+    void initialize();
+    float computeDFA1(vector<int>* rr_buffer);
+    float computeRMSSD(vector<int>* rr_buffer);
+    DecodedInput decodeInput(vector<uint8_t> &input);
+    vector<float> createScales(double a, double b, int k);
 };
 
 #endif /* HRV_hpp */
