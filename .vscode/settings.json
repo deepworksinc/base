@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "*.liquid": "liquid",
-        "vector": "cpp"
+        "vector": "cpp",
+        "deque": "cpp"
     }
 }

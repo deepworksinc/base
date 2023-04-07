@@ -2508,7 +2508,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 77BNMKA2CZ;
 				GENERATE_INFOPLIST_FILE = YES;
-				HEADER_SEARCH_PATHS = /usr/local/include/eigen3/;
+				HEADER_SEARCH_PATHS = ../../../services/hrv/3rdparty/eigen3;
 				INFOPLIST_KEY_CFBundleDisplayName = "Base WatchKit App";
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Base uses Bluetooth to find, connect and transfer data with your heart monitoring devices.";
@@ -2524,7 +2524,7 @@
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-I",
-					/usr/local/include/eigen3/,
+					../../../services/hrv/3rdparty/eigen3,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.DeepWorks.Base.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2549,7 +2549,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 77BNMKA2CZ;
 				GENERATE_INFOPLIST_FILE = YES;
-				HEADER_SEARCH_PATHS = /usr/local/include/eigen3/;
+				HEADER_SEARCH_PATHS = ../../../services/hrv/3rdparty/eigen3;
 				INFOPLIST_KEY_CFBundleDisplayName = "Base WatchKit App";
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Base uses Bluetooth to find, connect and transfer data with your heart monitoring devices.";
@@ -2565,7 +2565,7 @@
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-I",
-					/usr/local/include/eigen3/,
+					../../../services/hrv/3rdparty/eigen3,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.DeepWorks.Base.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2595,7 +2595,7 @@
 				DEVELOPMENT_TEAM = 77BNMKA2CZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				HEADER_SEARCH_PATHS = /usr/local/include/eigen3/;
+				HEADER_SEARCH_PATHS = ../../../services/hrv/3rdparty/eigen3;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Base uses Bluetooth to find, connect and transfer data with your heart monitoring devices.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2611,7 +2611,7 @@
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-I",
-					/usr/local/include/eigen3/,
+					../../../services/hrv/3rdparty/eigen3,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.DeepWorks.Base;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2642,7 +2642,7 @@
 				DEVELOPMENT_TEAM = 77BNMKA2CZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				HEADER_SEARCH_PATHS = /usr/local/include/eigen3/;
+				HEADER_SEARCH_PATHS = ../../../services/hrv/3rdparty/eigen3;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Base uses Bluetooth to find, connect and transfer data with your heart monitoring devices.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2658,7 +2658,7 @@
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-I",
-					/usr/local/include/eigen3/,
+					../../../services/hrv/3rdparty/eigen3,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.DeepWorks.Base;
 				PRODUCT_NAME = "$(TARGET_NAME)";

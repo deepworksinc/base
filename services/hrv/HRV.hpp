@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <string>
 #include <vector>
+#include <deque>
 
 using std::deque;
 using std::vector;
@@ -23,9 +24,9 @@ struct DecodedInput
 struct State
 {
     bool initialized;
-    vector<float> bpmHistory;
-    vector<float> rrHistory;
-    deque<float> rrBuffer;
+    vector<int> bpmHistory;
+    vector<int> rrHistory;
+    deque<int> rrBuffer;
     vector<float> dfa1History;
     vector<float> rmssdHistory;
 };
@@ -44,8 +45,8 @@ class HRV
 public:
     Features computeFeatures(vector<uint8_t> &input);
     void initialize();
-    float computeDFA1(vector<int>* rr_buffer);
-    float computeRMSSD(vector<int>* rr_buffer);
+    float computeDFA1();
+    float computeRMSSD();
     DecodedInput decodeInput(vector<uint8_t> &input);
     vector<float> createScales(double a, double b, int k);
 };

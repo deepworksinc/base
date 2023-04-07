@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 
 @interface HRVWrapper : NSObject
-- (NSDictionary *) push: (NSArray *) bytes;
+- (NSDictionary *) computeFeatures: (NSArray *) bytes;
 @end
 
 #endif /* HRVWrapper_h */

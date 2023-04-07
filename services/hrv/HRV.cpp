@@ -70,8 +70,8 @@ Features HRV::computeFeatures(vector<uint8_t>& input) {
         }
     }
     
-    float dfa1 = float(0); // computeDFA1();
-    float rmssd = float(0); // computeRMSSD();
+    float dfa1 = computeDFA1();
+    float rmssd = computeRMSSD();
 
     // Update state dfa1History and rmssdHistory
     state.dfa1History.push_back(dfa1);
@@ -84,9 +84,13 @@ Features HRV::computeFeatures(vector<uint8_t>& input) {
     };
 }
 
-float HRV::computeDFA1(vector<int>* rrBuffer) {}
+float HRV::computeDFA1() {
+    return float(0);
+}
 
-float HRV::computeRMSSD(vector<int>* rrBuffer) {}
+float HRV::computeRMSSD() {
+    return float(0);
+}
 
 // // Compute DFA1 feature
 // float HRV::computeDFA1(vector<int>* rrBuffer) {

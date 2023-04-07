@@ -10,7 +10,7 @@ let heartProviderCBUUID = CBUUID(string: "0x180D")
 let heartMeasurementCharacteristicCBUUID = CBUUID(string: "2A37")
 let hrv = HRVWrapper()
 let defaultState = HeartState(bpm: 0, dfa1: 0.0, rmssd: 0.0)
-let currentState = defaultState
+var currentState = defaultState
 
 class HeartProvider: NSObject, ObservableObject {
     @ObservedObject private var connectivityManager = ConnectivityProvider.shared
@@ -116,14 +116,14 @@ extension HeartProvider: CBPeripheralDelegate {
     }
     
     private func getHeartState(from characteristic: CBCharacteristic) -> HeartState {
-        guard let characteristicData = characteristic.value else { return currentState || defaultState }
+        guard let characteristicData = characteristic.value else { return currentState }
         let byteArray = [UInt8](characteristicData)
         
         let features = hrv.computeFeatures(byteArray)!
         
-        guard let bpm = features["bpm"] as? Int else { return currentState || defaultState }
-        guard let dfa1 = features["dfa1"] as? Float else { return currentState || defaultState }
-        guard let rmssd = features["rmssd"] as? Float else { return currentState || defaultState }
+        guard let bpm = features["bpm"] as? Int else { return currentState }
+        guard let dfa1 = features["dfa1"] as? Float else { return currentState }
+        guard let rmssd = features["rmssd"] as? Float else { return currentState }
 
         currentState = HeartState(bpm: bpm, dfa1: dfa1, rmssd: rmssd)
 
