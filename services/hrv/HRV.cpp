@@ -15,9 +15,7 @@ using std::vector;
 using Eigen::MatrixXf;
 
 // HRV service state data
-bool initialized = false;
-vector<float> rrHistory;
-deque<float> rrBuffer;
+State state;
 
 // HRV statistical constants
 const int maxBufferSize = 120;
@@ -35,7 +33,7 @@ int count = 0;
 // Push input data and return features
 Features HRV::computeFeatures(vector<uint8_t>& input) {
 
-    if (!initialized) {
+    if (!state.initialized) {
 
         cout << "Initializing HRV feature computation constants..." << std::endl;
 
@@ -45,37 +43,44 @@ Features HRV::computeFeatures(vector<uint8_t>& input) {
     // Decode bytes
     DecodedInput decodedInput = decodeInput(input);
 
-    // Loop over RR values and update buffer
+    // Update state bpmHistory
+    state.bpmHistory.push_back(decodedInput.bpm);
+
+    // Loop over RR values and update state rrHistory and rrBuffer
     for (int i = 0; i < decodedInput.rrs.size(); ++i) {
         
         // Artifact Correction Threshold 0.05
         int newRR = decodedInput.rrs[i];
-        if (rrBuffer.size()) {
-            int lastRR = rrBuffer[rrBuffer.size() - 1];
+        if (state.rrBuffer.size()) {
+            int lastRR = state.rrBuffer[state.rrBuffer.size() - 1];
             float lowerCorrectionThreshold = lastRR * (1 - artifactCorrectionThreshold);
             float upper_correction_threshold = lastRR * (1 + artifactCorrectionThreshold);
             if (lowerCorrectionThreshold < newRR < upper_correction_threshold) {
-                rrHistory.push_back(newRR);
-                rrBuffer.push_back(newRR);
+                state.rrHistory.push_back(newRR);
+                state.rrBuffer.push_back(newRR);
             };
         } else {
-            rrHistory.push_back(newRR);
-            rrBuffer.push_back(newRR);
+            state.rrHistory.push_back(newRR);
+            state.rrBuffer.push_back(newRR);
         }
 
         // Remove oldest RR value from buffer
-        if (rrBuffer.size() > maxBufferSize) {
-            rrBuffer.pop_front();
+        if (state.rrBuffer.size() > maxBufferSize) {
+            state.rrBuffer.pop_front();
         }
     }
     
-    // float dfa1 = computeDFA1();
-    // float rmssd = computeRMSSD();
+    float dfa1 = float(0); // computeDFA1();
+    float rmssd = float(0); // computeRMSSD();
+
+    // Update state dfa1History and rmssdHistory
+    state.dfa1History.push_back(dfa1);
+    state.rmssdHistory.push_back(rmssd);
     
     return {
         decodedInput.bpm,
-        float(0.0), // dfa1,
-        float(0.0) // rmssd
+        dfa1,
+        rmssd
     };
 }
 
@@ -149,7 +154,7 @@ float HRV::computeRMSSD(vector<int>* rrBuffer) {}
 void HRV::initialize() {
     scales = createScales(log10(pow(10, start)), log10(pow(10, stop)), scaleDensity);
     F.resize(scales.size());
-    initialized = true;
+    state.initialized = true;
 }
 
 

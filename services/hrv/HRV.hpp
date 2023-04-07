@@ -9,6 +9,7 @@
 #include <string>
 #include <vector>
 
+using std::deque;
 using std::vector;
 
 // Service input data
@@ -19,6 +20,17 @@ struct DecodedInput
 };
 
 // Service state data
+struct State
+{
+    bool initialized;
+    vector<float> bpmHistory;
+    vector<float> rrHistory;
+    deque<float> rrBuffer;
+    vector<float> dfa1History;
+    vector<float> rmssdHistory;
+};
+
+// Service return data
 struct Features
 {
     int bpm;
