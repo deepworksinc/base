@@ -5,6 +5,8 @@
         "apps/*"
     ],
     "scripts": {
+        "dev:dsp": "cd services/dsp && make && ./build/app",
+        "dev:dsp-py": "cd services/dsp && poetry run python main.py",
         "dev:web": "npm run dev --workspace @base/web"
     }
 }
